@@ -1,0 +1,135 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+	<meta charset="utf-8">
+	<title>Simple Zakat Calculator</title>
+	<meta name="description" content="a basic Zakat calculator which lets you select your preferred Nisab threshold">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+	<link rel="stylesheet" href="main.css">
+</head>
+
+<body class="bg-light">
+	<div class="container">
+		<div class="row py-5 text-center">
+			<h1 class="display-2">Zakat Calculator</h1>
+			<p class="lead">
+				Zakat, one of the five pillars of Islam, is obligatory on all Muslims who meet Nisab values.
+			</p>
+			<p>
+				Nisab is the minimum amount of net capital that a Muslim must possess in order to be eligible to pay Zakat. You can use the calculator below to determine your payable Zakat according to the Nisab threshold of your choice.
+			</p>
+		</div>
+		<div class="row g-3 shadow-sm mb-5 bg-body rounded">
+			<form id="zakat-calculator" class="p-0">
+				<div class="row">
+					<div class="col-md-12">
+						<fieldset>
+							<legend>Nisab threshold</legend>
+							<div class="form-group form-check">
+								<div class="row">
+									<label class="form-label form-check-label" for="nisab-gold"><input type="radio" id="nisab-gold" name="nisab" value="3432.72" class="form-check-input">Value of Gold (approximately £3,432.72)</label>
+								</div>
+								<div class="row">
+									<label class="form-label form-check-label" for="nisab-silver"><input type="radio" id="nisab-silver" name="nisab" value="361.29" class="form-check-input" checked>Value of Silver (approximately £361.29)</label>
+								</div>
+							</div>
+						</fieldset>
+					</div>
+				</div>
+				<div class="row input">
+					<div class="col-md-6">
+						<fieldset>
+							<legend>Cash</legend>
+							<div class="row form-group">
+								<div class="col-md-12">
+									<label class="form-label control-label" for="cashinhand">Cash in hand & in bank accounts</label><div class="input-group"><span class="input-group-text">£</span><input id="cashinhand" name="cashinhand" type="number" min="0" step="10" placeholder="" class="form-control form-control-lg"></div>
+								</div>
+							</div>
+							<div class="row form-group">
+								<div class="col-md-12">
+									<label class="form-label control-label" for="cashdeposited">Cash deposited for some future purpose, e.g. Hajj</label><div class="input-group"><span class="input-group-text">£</span><input id="cashdeposited" name="cashdeposited" type="number" min="0" step="10" class="form-control form-control-lg"></div>
+								</div>
+							</div>
+							<div class="row form-group">
+								<div class="col-md-12">
+									<label class="form-label control-label" for="cashloans">Cash given out in loans</label><div class="input-group"><span class="input-group-text">£</span><input id="cashloans" name="cashloans" type="number" min="0" step="10" class="form-control form-control-lg"></div>
+								</div>
+							</div>
+							<div class="row form-group">
+								<div class="col-md-12">
+									<label class="form-label control-label" for="cashinvestments">Investments, shares, saving certificates, pensions funded by money in one's possession</label><div class="input-group"><span class="input-group-text">£</span><input id="cashinvestments" name="cashinvestments" type="number" min="0" step="10" class="form-control form-control-lg form-control"></div>
+								</div>
+							</div>
+						</fieldset>
+						<fieldset>
+							<legend>Gold and Silver</legend>
+							<div class="row form-group">
+								<div class="col-md-12">
+									<label class="form-label control-label" for="gold">Value of Gold that you possess</label><div class="input-group"><span class="input-group-text">£</span><input id="gold" name="gold" type="number" step="10" min="0" class="form-control form-control-lg"></div>
+								</div>
+							</div>
+							<div class="row form-group">
+								<div class="col-md-12">
+									<label class="form-label control-label" for="silver">Value of Silver that you possess</label><div class="input-group"><span class="input-group-text">£</span><input id="silver" name="silver" type="number" min="0" step="10" class="form-control form-control-lg"></div>
+								</div>
+							</div>
+						</fieldset>
+						<fieldset>
+							<legend>Trade Goods</legend>
+							<div class="row form-group">
+								<div class="col-md-12">
+									<label class="form-label control-label" for="stock">Value of stock</label><div class="input-group"><span class="input-group-text">£</span><input id="stock" name="stock" type="number" min="0" step="10" class="form-control form-control-lg"></div>
+								</div>
+							</div>
+						</fieldset>
+					</div>
+
+					<div class="col-md-6">
+						<fieldset>
+							<legend>Liabilities</legend>
+							<div class="row form-group">
+								<div class="col-md-12">
+									<label class="form-label control-label" for="credit">Borrowed money, goods bought on credit</label><div class="input-group"><span class="input-group-text">£</span><input id="credit" name="credit" type="number" min="0" step="10" class="form-control form-control-lg"></div>
+								</div>
+							</div>
+							<div class="row form-group">
+								<div class="col-md-12">
+									<label class="form-label control-label" for="wages">Wages due to employees</label><div class="input-group"><span class="input-group-text">£</span><input id="wages" name="wages" type="number" min="0" step="10" class="form-control form-control-lg"></div>
+								</div>
+							</div>
+							<div class="row form-group">
+								<div class="col-md-12">
+									<label class="form-label" class="control-label" for="taxes">Taxes, Rent, utility bills due immediately</label><div class="input-group"><span class="input-group-text">£</span><input id="taxes" name="taxes" type="number" min="0" step="10" class="form-control form-control-lg"></div>
+								</div>
+							</div>
+						</fieldset>
+					</div>
+				</div>
+				<div class="row totals">
+					<div class="col-md-6">
+						<div class="form-group my-1">
+							<label class="form-label control-label" for="total">Total Net Worth</label><span class="calc">£</span><span id="total" class="calc">0</span>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="form-group my-1">
+							<label class="form-label control-label" for="zakat">Zakat Payable</label><span class="calc">£</span><span id="zakat" class="calc">0</span>
+						</div>
+					</div>
+					<div class="col-md-12 cta my-1">
+						<div class="form-group">
+							<a href="#" id="calculator-donate" name="calculate" class="btn btn-lg btn-primary btn-success">Give your Zakat</a>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"></script>
+<script src="./zakat-calculator.js"></script>
+</body>
+</html>
